@@ -95,6 +95,49 @@ Sub auto1()
     For xlc = lc To 4 Step -1
       If Cells(lr, xlc).Value = "0" Then
        ActiveSheet.Range(Cells(1, xlc), Cells(1, xlc)).EntireColumn.Delete
+      End If
+    Next xlc
+    
+        ' 找億鎮物流倉移動
+    lc = Cells(4, 5).End(xlToRight).Column
+    lr = Cells(4, 1).End(xlDown).Row
+    For xlc = 5 To lc
+      If Cells(4, xlc).Value = "億鎮物流倉" Then
+        Range(Cells(1, xlc), Cells(lr, xlc)).Select
+        Application.CutCopyMode = False
+        Selection.Cut
+        Columns("D:D").Select
+        Selection.Insert Shift:=xlToRight
+        Exit For
+      End If
+    Next xlc
+    
+        ' 找中科裸裝倉移動
+    lc = Cells(4, 5).End(xlToRight).Column
+    lr = Cells(4, 1).End(xlDown).Row
+    For xlc = 5 To lc
+      If Cells(4, xlc).Value = "中科裸裝倉" Then
+        Range(Cells(1, xlc), Cells(lr, xlc)).Select
+        Application.CutCopyMode = False
+        Selection.Cut
+        Columns("D:D").Select
+        Selection.Insert Shift:=xlToRight
+        Exit For
+      End If
+    Next xlc
+    
+       ' 找中科倉移動
+    lc = Cells(4, 5).End(xlToRight).Column
+    lr = Cells(4, 1).End(xlDown).Row
+    For xlc = 5 To lc
+      If Cells(4, xlc).Value = "中科倉" Then
+        Range(Cells(1, xlc), Cells(lr, xlc)).Select
+        Application.CutCopyMode = False
+        Selection.Cut
+        Columns("D:D").Select
+        Selection.Insert Shift:=xlToRight
+        Exit For
+      End If
     Next xlc
     
 End Sub
