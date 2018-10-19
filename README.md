@@ -1,1 +1,1 @@
-# execl_vba_auto
+# AD 派送
